@@ -1,0 +1,1 @@
+g++  -g ../src/tb_matrix_operation.cpp ../src/matrix_utility_class.h ../src/matrix_determinant_class.h ../src/matrix_operation_wrapper.h ../src/matrix_operation_wrapper.cpp -o matrix_operation.exe -I/home/applications/Xilinx/Vivado_HLS/2015.3/include
