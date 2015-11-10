@@ -4,10 +4,10 @@
 #include "ap_int.h"
 
 #define DIM 4
-//typedef float matrix_data_t;
+typedef float matrix_data_t;
 //typedef double matrix_data_t;
 //typedef ap_fixed<16,8> matrix_data_t;
-typedef ap_fixed<32,16> matrix_data_t;
+//typedef ap_fixed<16,8> matrix_data_t;
 
 void matrix_operation_wrapper(matrix_data_t A[DIM][DIM], matrix_data_t Y[DIM][DIM]);
 
