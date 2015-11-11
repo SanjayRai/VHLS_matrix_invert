@@ -2,9 +2,15 @@
 #include<math.h>
 #include"matrix_operation_wrapper.h"
 
+double getCPUTime();
 
 int main()
 {
+
+  double startTime;
+  double endTime;
+  double ElapsedTime;
+
   matrix_data_t a[DIM][DIM];
   matrix_data_t a_inv[DIM][DIM];
   int i,j;
@@ -46,17 +52,20 @@ a[3][3] = 2.0;
         }
           printf ("\n");
     }
-  matrix_operation_wrapper(a, a_inv);
-  printf("\n**** Inverse Matrix ****\n\n");
-  for (i=0;i<DIM;i++)
-    {
-     for (j=0;j<DIM;j++)
-       {
-          printf ("\t%f ",(double)a_inv[i][j]);
-        }
-          printf ("\n");
+    startTime = getCPUTime();
+    //-----------------------------------------------
+    matrix_operation_wrapper(a, a_inv);
+    //-----------------------------------------------
+    endTime = getCPUTime();
+    ElapsedTime = (endTime - startTime);
+    printf("\n**** Inverse Matrix ****\n\n");
+    for (i=0;i<DIM;i++) {
+       for (j=0;j<DIM;j++) {
+            printf ("\t%f ",(double)a_inv[i][j]);
+       }
+       printf ("\n");
     }
-
+    printf (" Elapsed Time for algorithm = %1f sec\n", ElapsedTime);
 
 
 a[0][0] = 2.0;
@@ -86,14 +95,18 @@ a[3][3] = 4.0;
         }
           printf ("\n");
     }
-  matrix_operation_wrapper(a, a_inv);
-  printf("\n**** Inverse Matrix ****\n\n");
-  for (i=0;i<DIM;i++)
-    {
-     for (j=0;j<DIM;j++)
-       {
-          printf ("\t%f ",(double)a_inv[i][j]);
-        }
-          printf ("\n");
+    startTime = getCPUTime();
+    //-----------------------------------------------
+    matrix_operation_wrapper(a, a_inv);
+    //-----------------------------------------------
+    endTime = getCPUTime();
+    ElapsedTime = (endTime - startTime);
+    printf("\n**** Inverse Matrix ****\n\n");
+    for (i=0;i<DIM;i++) {
+       for (j=0;j<DIM;j++) {
+            printf ("\t%f ",(double)a_inv[i][j]);
+       }
+       printf ("\n");
     }
+    printf (" Elapsed Time for algorithm = %1f sec\n", ElapsedTime);
 }
